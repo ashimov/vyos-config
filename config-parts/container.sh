@@ -68,14 +68,14 @@ set container name omada-controller environment TZ value 'Asia/Jakarta'
 
 # cloudflare-ddns
 set container name cloudflare-ddns allow-host-networks
+set container name cloudflare-ddns gid '1000'
 set container name cloudflare-ddns image 'docker.io/favonia/cloudflare-ddns:1.11.0'
 set container name cloudflare-ddns memory '0'
 set container name cloudflare-ddns restart 'on-failure'
 set container name cloudflare-ddns shared-memory '0'
+set container name cloudflare-ddns uid '1000'
 set container name cloudflare-ddns environment CF_API_TOKEN value "${SECRET_CLOUDFLARE_DDNS_TOKEN}"
 set container name cloudflare-ddns environment DOMAINS value "${SECRET_CLOUDFLARE_DDNS_DOMAINS}"
 set container name cloudflare-ddns environment IP6_PROVIDER value 'none'
 set container name cloudflare-ddns environment UPDATE_CRON value '@every 2m'
-set container name cloudflare-ddns environment PGID value '1000'
-set container name cloudflare-ddns environment PUID value '1000'
 set container name cloudflare-ddns environment TZ value 'Asia/Jakarta'
